@@ -4,46 +4,61 @@ import ReactDom from "react-dom";
 // Import CSS
 import './index.css';
 
+// setup vars
+const books = [
+    {   id: 1,
+        img: "https://images-eu.ssl-images-amazon.com/images/I/81ykn7%2B2r3L._AC_UL200_SR200,200_.jpg",
+        title: "While We Can't Hug (A Hedgehog and Tortoise Story)",
+        author: "Eoin McLaughlin"
+    },
+    {   
+        id: 2,
+        img: "https://images-eu.ssl-images-amazon.com/images/I/71opRtEE0iL._AC_UL200_SR200,200_.jpg",
+        title: "The Smeds and the Smoos",
+        author: "Julia Donaldson"
+    },
+    {   
+        id: 3,
+        img: "https://images-eu.ssl-images-amazon.com/images/I/61dSrnSRMCL._AC_UL200_SR200,200_.jpg",
+        title: "Conker the Chameleon",
+        author: "Hannah Peckham"
+    }
+]
+// Example of maping names to h1
+// const names = ['John', 'peter', 'susan'];
+// const newNames = names.map((name) => {
+//     return <h1>{name}</h1>
+// });
+// console.log(newNames)
+
 function BookList() {
     return (
         <section className="booklist">
-            <Book />
-            <Book />
-            <Book />
-            <Book />
-            <Book />
-            <Book />
-            <Book />
+            {books.map((book) => {
+                return (
+                      <Book key={book.id} {...book}></Book>
+                    )
+            })}
         </section>
     )
 }
 
-// setup vars
-const author = "Eoin McLaughlin";
-const title = "While We Can't Hug (A Hedgehog and Tortoise Story)";
-const img = "https://images-eu.ssl-images-amazon.com/images/I/81ykn7%2B2r3L._AC_UL200_SR200,200_.jpg";
-
-const Book = () => {
+const Book = ({ img, title, author }) => {
+    // attribute, eventHandler
+    // onClick, onMouseOver
+    const clickHandler = () => {
+        alert("Hello world");
+    };
     return (
         <article className="book">
             <img src= {img} alt=""/> 
             <h1>{title}</h1>
             <h4>{author}</h4>
+            <button type="button" onClick={clickHandler}>Reference example</button>
         </article>
     )
     
 }
-
-// const Image = () => ( 
-//     <img 
-//         src="https://images-eu.ssl-images-amazon.com/images/I/81ykn7%2B2r3L._AC_UL200_SR200,200_.jpg" 
-//         alt=""
-//     /> 
-// );
-
-// const Title = () => <h1>While We Can't Hug (A Hedgehog and Tortoise Story)</h1>
-
-// const Author = () => <h4 style={{color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem"}}>Eoin McLaughlin</h4>
 
 
 ReactDom.render(<BookList/>, document.getElementById("root"));
