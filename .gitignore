@@ -9,11 +9,19 @@ node_modules
 /tutorial/.pnp
 /tutorial/.pnp.js
 
+/react-advanced-2020-master/node_modules
+/react-advanced-2020-master/.pnp
+/react-advanced-2020-master/.pnp.js
+
 # testing
 /tutorial/coverage
 
+/react-advanced-2020-master/coverage
+
 # production
 /tutorial/build
+
+/react-advanced-2020-master/build
 
 # misc
 .DS_Store
