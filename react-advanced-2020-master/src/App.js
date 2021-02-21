@@ -34,7 +34,13 @@ import React from "react";
 // import Setup from "./tutorial/8-useContext/setup/1-context-api";
 
 // Custom Hooks Imports
-import Setup from "./tutorial/9-custom-hooks/setup/1-fetch-example";
+// import Setup from "./tutorial/9-custom-hooks/setup/1-fetch-example";
+
+// Prop Types Imports
+// import Setup from "./tutorial/10-prop-types/setup/";
+
+// React Router Imports
+import Setup from "./tutorial/11-react-router/setup";
 
 function App() {
   return (
